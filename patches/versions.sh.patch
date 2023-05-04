@@ -1,0 +1,37 @@
+diff --git a/versions.sh b/versions.sh
+index 9628981..752f63a 100755
+--- a/versions.sh
++++ b/versions.sh
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env bash
++# https://raw.githubusercontent.com/docker-library/python/29c55052740fd5c88f157545cfc655efa828ab96/versions.sh
+ set -Eeuo pipefail
+ shopt -s nullglob
+ 
+@@ -168,19 +169,14 @@ for version in "${versions[@]}"; do
+ 			},
+ 			variants: [
+ 				(
+-					"bullseye",
+-					"buster"
+-				| ., "slim-" + .), # https://github.com/docker-library/ruby/pull/142#issuecomment-320012893
++					"jammy"
++				| .),
+ 				(
+-					"3.17",
+-					"3.16"
+-				| "alpine" + .),
+-				if env.hasWindows != "" then
+-					(
+-						"ltsc2022",
+-						"1809"
+-					| "windows/windowsservercore-" + .)
+-				else empty end
++					"11.7.1-cudnn8-runtime",
++					"11.7.1-cudnn8-devel",
++					"11.8.0-cudnn8-runtime",
++					"11.8.0-cudnn8-devel"
++				| "cuda-" + . + "-ubuntu" | . + "22.04")
+ 			],
+ 		}
+ 	')"
