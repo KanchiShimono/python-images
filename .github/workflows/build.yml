@@ -19,7 +19,7 @@ jobs:
       - name: Setup | Fetch latest version and apply template
         run: |
           versions="$(jq -r 'keys | join(" ")' versions.json)"
-          ./versions.sh "${versions}"
+          ./versions.sh ${versions}
 
       - name: Setup | Apply template
         run: |
