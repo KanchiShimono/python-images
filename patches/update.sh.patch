@@ -1,0 +1,10 @@
+diff --git a/update.sh b/update.sh
+index bac2d75..f61405d 100755
+--- a/update.sh
++++ b/update.sh
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env bash
++# https://raw.githubusercontent.com/docker-library/python/c484e1ba82213c6a2e8785342630e5383d943d02/update.sh
+ set -Eeuo pipefail
+ 
+ cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
